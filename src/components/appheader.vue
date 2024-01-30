@@ -35,6 +35,33 @@ export default {
         </div>
 
     </main>
+
+    <footer class="d-flex">
+
+        <div class="container d-flex justify-content-evenly ">
+            <div class="wrapper">
+                <img src="../assets/img/header&sub/sub_3/buy-comics-digital-comics.png" alt="buy-digital-comics">
+                <p>digital comics</p>
+            </div>
+            <div class="wrapper">
+                <img src="../assets/img/header&sub/sub_3/buy-comics-merchandise.png" alt="buy-digital-comics">
+                <p>digital comics</p>
+            </div>
+            <div class="wrapper">
+                <img src="../assets/img/header&sub/sub_3/buy-comics-subscriptions.png" alt="buy-digital-comics">
+                <p>digital comics</p>
+            </div>
+            <div class="wrapper">
+                <img src="../assets/img/header&sub/sub_3/buy-comics-shop-locator.png" alt="buy-digital-comics">
+                <p>digital comics</p>
+            </div>
+            <div class="wrapper">
+                <img src="../assets/img/header&sub/sub_3/buy-dc-power-visa.png" alt="buy-digital-comics">
+                <p>digital comics</p>
+            </div>
+        </div>
+
+    </footer>
 </template>
 
 
@@ -70,6 +97,39 @@ main {
             font-weight: bolder;
         }
     }
+}
+
+footer {
+    min-height: 100px;
+    background-color: var(--blue-comics);
+    font-family: 'Open Sans', sans-serif;
+
+
+    & .container {
+        width: 80%;
+
+        & .wrapper {
+            width: calc((100% / 5) - 15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                max-width: 40px;
+                aspect-ratio: 1 / 1;
+            }
+
+            & p {
+                margin-top: 1.1rem;
+                margin-left: .4rem;
+                text-transform: uppercase;
+                color: var(--main-light);
+                font-size: .7rem;
+                font-weight: 500;
+            }
+        }
+    }
+
 }
 
 
