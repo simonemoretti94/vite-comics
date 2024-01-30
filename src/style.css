@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --main-dark: #333;
+  --main-light: white;
+  --blue-comics: #0C7CEC;
+}
+
+body {
+  background-color: var(--main-dark);
+  /* font-family: 'Open Sans', sans-serif; */
+}
