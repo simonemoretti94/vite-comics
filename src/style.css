@@ -13,6 +13,12 @@
 
 body {
   background-color: black;
+
+  & a:hover {
+    cursor: pointer;
+  }
+
+
 }
 
 header,

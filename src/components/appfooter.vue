@@ -53,6 +53,11 @@ main {
                 font-weight: bold;
             }
 
+            & a:hover {
+                border-radius: 15px;
+                color: var(--blue-comics);
+            }
+
         }
 
 
@@ -70,10 +75,19 @@ main {
                 margin-right: .5rem;
             }
 
+            & a:hover {
+                transform: scale(1.05);
+
+            }
+
             & img {
                 width: 20px;
                 aspect-ratio: 1 / 1;
                 margin: auto .3rem;
+            }
+
+            & img:hover {
+                transform: scale(1.1);
             }
         }
     }

@@ -41,24 +41,24 @@ export default {
         <div class="container d-flex justify-content-evenly ">
             <div class="wrapper">
                 <img src="../assets/img/header&sub/sub_3/buy-comics-digital-comics.png" alt="buy-digital-comics">
-                <p>digital comics</p>
+                <a>digital comics</a>
             </div>
             <div class="wrapper">
                 <img src="../assets/img/header&sub/sub_3/buy-comics-merchandise.png" alt="buy-digital-comics">
-                <p>digital comics</p>
+                <a>digital comics</a>
             </div>
             <div class="wrapper">
                 <img src="../assets/img/header&sub/sub_3/buy-comics-subscriptions.png" alt="buy-digital-comics">
-                <p>digital comics</p>
+                <a>digital comics</a>
             </div>
             <div class="wrapper">
                 <img src="../assets/img/header&sub/sub_3/buy-comics-shop-locator.png" alt="buy-digital-comics">
-                <p>digital comics</p>
+                <a>digital comics</a>
             </div>
             <div class="wrapper">
                 <img src="../assets/img/header&sub/sub_3/buy-dc-power-visa.png" alt="buy-digital-comics"
                     style="font-size: .5rem; color: blue;">
-                <p>digital comics</p>
+                <a>digital comics</a>
             </div>
         </div>
 
@@ -119,10 +119,11 @@ footer {
                 aspect-ratio: 1 / 1;
             }
 
-            & p {
+            & a {
                 margin-top: 1.1rem;
                 margin-left: .4rem;
                 text-transform: uppercase;
+                text-decoration: none;
                 color: var(--main-light);
                 font-size: .7rem;
                 font-weight: 500;

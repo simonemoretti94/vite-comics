@@ -85,7 +85,7 @@ main {
             margin-top: .4rem;
 
             & div {
-                background-color: rgba(169, 168, 168, 0.795);
+                background-color: rgba(237, 237, 237, 0.795);
                 border-radius: 8px;
                 margin-right: .2rem;
 
