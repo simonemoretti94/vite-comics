@@ -45,11 +45,11 @@ main {
 
             & a {
                 padding: .4rem .4rem;
-                border: solid 1.5px var(--blue-comics);
+                border: solid 1.7px var(--blue-comics);
                 color: white;
                 text-transform: uppercase;
                 text-decoration: none;
-                font-size: 50%;
+                font-size: 55%;
                 font-weight: bold;
             }
 
@@ -66,7 +66,7 @@ main {
                 text-transform: uppercase;
                 text-decoration: none;
                 font-weight: bolder;
-                padding-top: .1rem;
+                padding-top: .17rem;
                 margin-right: .5rem;
             }
 
