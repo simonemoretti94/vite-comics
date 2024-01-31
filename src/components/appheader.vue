@@ -75,12 +75,13 @@ header {
     justify-content: center;
 
     & .container {
-
-        width: 80%;
-
         & .logo {
             width: 70px;
             aspect-ratio: 1 / 1;
+        }
+
+        & ul {
+            margin-top: 1rem;
         }
     }
 }
@@ -92,8 +93,6 @@ main {
     font-family: 'Open Sans', sans-serif;
 
     & .container {
-        width: 80%;
-
         & p {
             font-weight: bolder;
         }
@@ -150,7 +149,9 @@ ul {
     }
 
     & .a_blue {
+        padding-top: 2px;
         color: var(--blue-comics);
+        border-bottom: solid 2px var(--blue-comics);
     }
 
 }

@@ -12,5 +12,13 @@
 }
 
 body {
-  background-color: var(--main-dark);
+  background-color: black;
+}
+
+header,
+main,
+footer {
+  & .container {
+    width: 80%;
+  }
 }

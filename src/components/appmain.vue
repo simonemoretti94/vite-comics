@@ -15,7 +15,7 @@ export default {
         <div class="container">
 
             <div id="wrapper" class="d-flex flex-row justify-content-start align-items-start ">
-                <div class="d-flex flex-column justify-content-between ">
+                <div class="d-flex flex-column justify-content-between align-items-start">
                     <ul>
                         <h5>dc comics</h5>
                         <a href="">characters</a>
@@ -32,7 +32,7 @@ export default {
                         <a href="">shop DC collectibles</a>
                     </ul>
                 </div>
-                <div class="d-flex flex-column justify-content-between ">
+                <div class="d-flex flex-column justify-content-between align-items-start ">
                     <ul>
                         <h5>dc</h5>
                         <a href="">terms of use</a>
@@ -48,7 +48,7 @@ export default {
                         <a href="">contact us</a>
                     </ul>
                 </div>
-                <div class="d-flex flex-column justify-content-between ">
+                <div class="d-flex flex-column justify-content-between align-items-start">
                     <ul>
                         <h5>sites</h5>
                         <a href="">DC</a>
@@ -81,17 +81,19 @@ main {
     justify-content: start;
 
     & .container {
-        width: 80%;
-
         & div#wrapper {
-            margin-top: 1rem;
+            margin-top: .4rem;
 
             & div {
+                background-color: rgba(169, 168, 168, 0.795);
+                border-radius: 8px;
+                margin-right: .2rem;
 
                 & ul {
                     display: flex;
                     flex-direction: column;
                     justify-content: start;
+
 
                     & h5 {
                         text-transform: uppercase;
