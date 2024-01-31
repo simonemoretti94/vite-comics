@@ -56,7 +56,8 @@ export default {
                 <p>digital comics</p>
             </div>
             <div class="wrapper">
-                <img src="../assets/img/header&sub/sub_3/buy-dc-power-visa.png" alt="buy-digital-comics">
+                <img src="../assets/img/header&sub/sub_3/buy-dc-power-visa.png" alt="buy-digital-comics"
+                    style="font-size: .5rem; color: blue;">
                 <p>digital comics</p>
             </div>
         </div>
