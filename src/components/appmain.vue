@@ -27,10 +27,25 @@ export default {
                 </ul>
                 <ul>
                     <h5>shop</h5>
+                    <a href="">shop DC</a>
+                    <a href="">shop DC collectibles</a>
                 </ul>
             </div>
             <div class="d-flex flex-column justify-content-between ">
-                <h5>dc</h5>
+                <ul>
+                    <h5>dc</h5>
+                    <a href="">terms of use</a>
+                    <a href="">privacy policy (new)</a>
+                    <a href="">add choices</a>
+                    <a href="">advertising</a>
+                    <a href="">jobs</a>
+                    <a href="">subscriptions</a>
+                    <a href="">talent workshops</a>
+                    <a href="">CPSC certificates</a>
+                    <a href="">ratings</a>
+                    <a href="">shop help</a>
+                    <a href="">contact us</a>
+                </ul>
             </div>
             <div class="d-flex flex-column justify-content-between ">
                 <h5>sites</h5>
@@ -66,20 +81,26 @@ main {
         & ul {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: start;
 
             & h5 {
                 text-transform: uppercase;
+                font-size: 80%;
+                font-weight: bolder;
                 color: white;
                 text-align: left;
-                margin-bottom: .3rem;
+                margin-bottom: .4rem;
+
             }
 
             & a {
                 text-transform: capitalize;
                 text-decoration: none;
+                font-weight: 500;
+                font-size: 70%;
                 color: var(--main-dark);
                 text-align: left;
+                margin-bottom: .1rem;
             }
         }
     }
