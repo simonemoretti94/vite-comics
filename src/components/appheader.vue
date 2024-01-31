@@ -80,8 +80,37 @@ header {
             aspect-ratio: 1 / 1;
         }
 
+        & .logo:hover {
+            transform: rotate(-10deg);
+        }
+
         & ul {
             margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            & a {
+                color: var(--main-dark);
+                text-decoration: none;
+                text-transform: uppercase;
+                margin: auto .4rem;
+                font-size: .6rem;
+                font-weight: bolder;
+            }
+
+            & a:hover {
+                font-weight: 800;
+                color: black;
+                border-bottom: 0;
+            }
+
+            & .a_blue {
+                padding-top: 2px;
+                color: var(--blue-comics);
+                border-bottom: solid 2px var(--blue-comics);
+            }
+
         }
     }
 }
@@ -94,6 +123,7 @@ main {
 
     & .container {
         & p {
+            margin-top: 1rem;
             font-weight: bolder;
         }
     }
@@ -129,30 +159,6 @@ footer {
                 font-weight: 500;
             }
         }
-    }
-
-}
-
-
-
-ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-    & a {
-        color: var(--main-dark);
-        text-decoration: none;
-        text-transform: uppercase;
-        margin: auto .4rem;
-        font-size: .6rem;
-        font-weight: bolder;
-    }
-
-    & .a_blue {
-        padding-top: 2px;
-        color: var(--blue-comics);
-        border-bottom: solid 2px var(--blue-comics);
     }
 
 }
