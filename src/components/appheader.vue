@@ -145,13 +145,13 @@ footer {
             align-items: center;
 
             & img {
-                max-width: 40px;
+                max-width: 37px;
                 aspect-ratio: 1 / 1;
             }
 
             & a {
-                margin-top: 1.1rem;
-                margin-left: .4rem;
+                margin-top: 0.1rem;
+                margin-left: .5rem;
                 text-transform: uppercase;
                 text-decoration: none;
                 color: var(--main-light);
