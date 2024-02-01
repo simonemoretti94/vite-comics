@@ -17,46 +17,46 @@ export default {
 
             <div id="wrapper" class="d-flex flex-row justify-content-start align-items-start ">
                 <div class="d-flex flex-column justify-content-between align-items-start">
-                    <ul>
+                    <ul class="list-unstyled">
                         <h5>dc comics</h5>
-                        <a href="">characters</a>
-                        <a href="">comics</a>
-                        <a href="">movies</a>
-                        <a href="">TV</a>
-                        <a href="">games</a>
-                        <a href="">videos</a>
-                        <a href="">news</a>
+                        <li href="">characters</li>
+                        <li href="">comics</li>
+                        <li href="">movies</li>
+                        <li href="">TV</li>
+                        <li href="">games</li>
+                        <li href="">videos</li>
+                        <li href="">news</li>
                     </ul>
-                    <ul>
+                    <ul class="list-unstyled">
                         <h5>shop</h5>
-                        <a href="">shop DC</a>
-                        <a href="">shop DC collectibles</a>
+                        <li href="">shop DC</li>
+                        <li href="">shop DC collectibles</li>
                     </ul>
                 </div>
                 <div class="d-flex flex-column justify-content-between align-items-start ">
-                    <ul>
+                    <ul class="list-unstyled">
                         <h5>dc</h5>
-                        <a href="">terms of use</a>
-                        <a href="">privacy policy (new)</a>
-                        <a href="">add choices</a>
-                        <a href="">advertising</a>
-                        <a href="">jobs</a>
-                        <a href="">subscriptions</a>
-                        <a href="">talent workshops</a>
-                        <a href="">CPSC certificates</a>
-                        <a href="">ratings</a>
-                        <a href="">shop help</a>
-                        <a href="">contact us</a>
+                        <li href="">terms of use</li>
+                        <li href="">privacy policy (new)</li>
+                        <li href="">add choices</li>
+                        <li href="">advertising</li>
+                        <li href="">jobs</li>
+                        <li href="">subscriptions</li>
+                        <li href="">talent workshops</li>
+                        <li href="">CPSC certificates</li>
+                        <li href="">ratings</li>
+                        <li href="">shop help</li>
+                        <li href="">contact us</li>
                     </ul>
                 </div>
                 <div class="d-flex flex-column justify-content-between align-items-start">
-                    <ul>
+                    <ul class="list-unstyled">
                         <h5>sites</h5>
-                        <a href="">DC</a>
-                        <a href="">MAD magazine</a>
-                        <a href="">DC kids</a>
-                        <a href="">DC universe</a>
-                        <a href="">DC power visa</a>
+                        <li href="">DC</li>
+                        <li href="">MAD magazine</li>
+                        <li href="">DC kids</li>
+                        <li href="">DC universe</li>
+                        <li href="">DC power visa</li>
                     </ul>
                 </div>
             </div>
@@ -73,7 +73,7 @@ export default {
     width: 100%;
     background-image: url('../assets/img/main&sub/jumbotron.jpg');
     background-size: contain;
-    filter: grayscale(100%) brightness(30%) saturate(100%);
+    filter: grayscale(1) opacity(.3);
 }
 
 main {
@@ -91,7 +91,7 @@ main {
         left: 0;
 
         & div#wrapper {
-            margin-top: .4rem;
+            margin-top: .45rem;
 
             & div {
                 border-radius: 8px;
@@ -113,7 +113,7 @@ main {
 
                     }
 
-                    & a {
+                    & li {
                         text-transform: capitalize;
                         text-decoration: none;
                         word-spacing: .5px;
@@ -122,7 +122,7 @@ main {
                         font-size: 70%;
                         text-align: left;
                         color: var(--appmain-anchortags);
-                        /* filter: brightness(0) saturate(100%) drop-shadow(1.5px 1.5px 3px white); */
+                        filter: drop-shadow(.1px .1px .1px white);
 
                         margin-bottom: .1rem;
                     }
