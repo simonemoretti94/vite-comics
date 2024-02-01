@@ -94,8 +94,7 @@ main {
             margin-top: .45rem;
 
             & div {
-                border-radius: 8px;
-                margin-right: .2rem;
+                margin-right: 1rem;
 
                 & ul {
                     display: flex;
