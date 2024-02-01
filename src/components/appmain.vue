@@ -11,6 +11,7 @@ export default {
 </script>
 
 <template>
+    <div id="background"></div>
     <main>
         <div class="container">
 
@@ -66,26 +67,33 @@ export default {
 
 
 <style scoped>
-main {
-
+#background {
+    position: absolute;
     min-height: 250px;
+    width: 100%;
     background-image: url('../assets/img/main&sub/jumbotron.jpg');
     background-size: contain;
-    /* opacity: 0.5; */
-    filter: grayscale(100%) brightness(100%) saturate(100%);
+    filter: grayscale(100%) brightness(30%) saturate(100%);
+}
 
-
+main {
+    position: relative;
+    min-height: 250px;
 
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: start;
 
+
     & .container {
+        position: relative;
+        top: 0;
+        left: 0;
+
         & div#wrapper {
             margin-top: .4rem;
 
             & div {
-                background-color: rgba(237, 237, 237, 0.795);
                 border-radius: 8px;
                 margin-right: .2rem;
 
@@ -112,8 +120,9 @@ main {
                         letter-spacing: .2px;
                         font-weight: 500;
                         font-size: 70%;
-                        color: var(--appmain-anchortags);
                         text-align: left;
+                        color: var(--appmain-anchortags);
+                        /* filter: brightness(0) saturate(100%) drop-shadow(1.5px 1.5px 3px white); */
 
                         margin-bottom: .1rem;
                     }
