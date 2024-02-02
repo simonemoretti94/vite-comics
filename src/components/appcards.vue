@@ -20,13 +20,25 @@ export default {
 
 <style scoped>
 #div_injected {
+
     & img {
         aspect-ratio: 1 / 1;
         padding: .5rem;
     }
 
     & p {
-        font-size: x-small;
+        font-size: small;
     }
 }
+
+#div_injected:hover {
+    & p {
+        color: blue;
+    }
+
+    & img {
+        transform: scale(.9);
+    }
+}
+
 </style>
