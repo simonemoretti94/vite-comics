@@ -10,6 +10,7 @@ export default {
 
     data() {
         return {
+            /* appcards.vue array */
             cardsArray: [
                 {
                     "thumb": "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
@@ -96,8 +97,27 @@ export default {
                     "tag": 'novel',
                 }
             ],
+
         }
     },
+    methods: {
+        /* appheader main select filter function */
+        selectedOption(value , event) {
+            console.log('value: ', value , '$event: ', event);
+           this.cardsArray.forEach((element, index) => {
+
+                if(element.tag.includes(value)) {
+
+                    /* removing item */
+                    this.cardsArray.splice(index, 1);
+                }
+           });
+        },
+        containerCheck(){
+
+        },
+
+    }
 }
 </script>
 
@@ -127,7 +147,7 @@ export default {
         </div>
 
         <div id="div_filter" class="container col-5 d-flex justify-content-center my-2" >
-            <select name="filter" id="cards_filter">
+            <select name="filter" id="cards_filter" v-on:change="selectedOption($event.target.value , $event)">
                 <option value="">Tutti i tag</option>
                 <option value="comic">Comic</option>
                 <option value="drama">Drama</option>
@@ -245,6 +265,7 @@ main {
             & option {
                 background-color: rgb(71, 186, 214);
                 color: white;
+                text-align: center;
                 
             }
         }
