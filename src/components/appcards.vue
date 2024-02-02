@@ -7,13 +7,14 @@ export default {
     props: {
         card: Object,
         index: Number,
+        visibility: Boolean,
     },
 
 }
 </script>
 
 <template>
-    <div :id="'div_injected_' + index " class="col-2 d-flex flex-column justify-content-center my-2">
+    <div v-if="visibility" :id="'div_injected_' + index " class="col-2 d-flex flex-column justify-content-center my-2">
         <img :src="card.thumb" :alt="card.type">
         <p class="text-center text-white text-uppercase">{{ card.series }}</p>
     </div>
