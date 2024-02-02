@@ -148,6 +148,9 @@ export default {
 
 <style scoped>
 header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
     min-height: 80px;
     background-color: var(--main-light);
     font-family: 'Open Sans', sans-serif;
@@ -197,6 +200,7 @@ header {
 
 main {
     min-height: 80px;
+    padding-top: 80px;
     background-color: black;
     color: var(--main-light);
     font-family: 'Open Sans', sans-serif;
