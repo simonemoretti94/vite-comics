@@ -6,6 +6,7 @@ export default {
     },
     props: {
         card: Object,
+        index: Number,
     },
 
 }
@@ -19,7 +20,10 @@ export default {
 </template>
 
 <style scoped>
-#div_injected {
+
+div[id^="div_injected"]{
+
+    
 
     & img {
         aspect-ratio: 1 / 1;
@@ -30,23 +34,24 @@ export default {
         font-size: small;
         font-weight: 500;
     }
+ 
 }
 
-#div_injected:hover {
+div[id^="div_injected"]:hover {
     filter:  saturate(200%) contrast(120%);
     cursor: pointer;
 
-    & p {
-        font-weight: 600;
+        & p {
+            font-weight: 600;
 
-    }
+        }
 
-    & img {
-        transform: scale(.9);
-        border-radius: 10px;
-        box-shadow: 1px 1px black;
-        filter: drop-shadow(1px 1px 1px white);
-    }
+        & img {
+            transform: scale(.9);
+            border-radius: 10px;
+            box-shadow: 1px 1px black;
+            filter: drop-shadow(1px 1px 1px white);
+        }
 }
 
 </style>

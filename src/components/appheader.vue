@@ -103,7 +103,13 @@ export default {
     methods: {
         /* appheader main select filter function */
         selectedOption(value , event) {
+
             console.log('value: ', value , '$event: ', event);
+            
+            //applying containerCheck() function
+            const containerlenght =  this.containerCheck();
+            console.log('containerLenght: ', containerlenght);
+
            this.cardsArray.forEach((element, index) => {
 
                 if(element.tag.includes(value)) {
@@ -114,7 +120,15 @@ export default {
            });
         },
         containerCheck(){
+            const cardsContainer = document.getElementById('container_cards');
 
+            let index = 0;
+            for (let index = 0; index < cardsContainer.length; index++) {
+                console.log('containercards index: ', index);
+                
+            }
+
+            return index;
         },
 
     }
@@ -142,8 +156,8 @@ export default {
 
     <main class="d-flex flex-column justify-content-evenly align-items-center">
 
-        <div class="container d-flex align-items-center flex-wrap">
-            <appcards v-for="card in cardsArray" :card="card"></appcards>
+        <div id="container_cards" class="container d-flex align-items-center flex-wrap">
+            <appcards v-for="(card, index) in cardsArray" :card="card" :index="index" ></appcards>
         </div>
 
         <div id="div_filter" class="container col-5 d-flex justify-content-center my-2" >
