@@ -257,7 +257,8 @@ header {
     z-index: 1;
     width: 100%;
     min-height: 80px;
-    background-color: var(--main-light);
+    /* background-color: var(--main-light); */
+    background: linear-gradient(#a0a0a0, #ffffff);
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
@@ -359,7 +360,7 @@ main {
 footer {
     min-height: 100px;
     /* background-color: var(--blue-comics); */
-    background: linear-gradient(#0C7CEC, #4589cc);
+    background: linear-gradient(#0C7CEC, #0a60b7);
     font-family: 'Open Sans', sans-serif;
 
 
