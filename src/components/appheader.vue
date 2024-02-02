@@ -358,7 +358,8 @@ main {
 
 footer {
     min-height: 100px;
-    background-color: var(--blue-comics);
+    /* background-color: var(--blue-comics); */
+    background: linear-gradient(#0C7CEC, #4589cc);
     font-family: 'Open Sans', sans-serif;
 
 
