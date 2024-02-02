@@ -28,16 +28,24 @@ export default {
 
     & p {
         font-size: small;
+        font-weight: 500;
     }
 }
 
 #div_injected:hover {
+    filter:  saturate(200%) contrast(120%);
+    cursor: pointer;
+
     & p {
-        color: blue;
+        font-weight: 600;
+
     }
 
     & img {
         transform: scale(.9);
+        border-radius: 10px;
+        box-shadow: 1px 1px black;
+        filter: drop-shadow(1px 1px 1px white);
     }
 }
 
