@@ -14,7 +14,7 @@ export default {
             cardsArray: [
                 {
                     "thumb": "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
-                    "price": "$19.99",
+                    "price": 19.99,
                     "series": "Action Comics",
                     "type": "comic book",
                     "tag": 'comic',
@@ -22,7 +22,7 @@ export default {
                 },
                 {
                     "thumb": "https://www.panini.it/media/catalog/product/cache/a5b5dd3adfe0d321084804c738f29601/M/1/M1BLLA015ISBN_0.jpg",
-                    "price": "$3.99",
+                    "price": 3.99,
                     "series": "American Vampire 1976",
                     "type": "comic book",
                     "tag": 'drama',
@@ -30,7 +30,7 @@ export default {
                 },
                 {
                     "thumb": "https://media.wired.com/photos/593384dad80dd005b42b2817/master/w_2560%2Cc_limit/Aquaman-16.jpg",
-                    "price": "$16.99",
+                    "price": 16.99,
                     "series": "Aquaman",
                     "type": "graphic novel",
                     "tag": 'novel',
@@ -38,7 +38,7 @@ export default {
                 },
                 {
                     "thumb": "https://d29xot63vimef3.cloudfront.net/image/batgirl/1-1.jpg",
-                    "price": "$2.99",
+                    "price": 2.99,
                     "series": "Batgirl",
                     "type": "comic book",
                     "tag": 'drama',
@@ -46,7 +46,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.posters.cz/image/750/locandine-film-in-plexiglass-batman-prowl-comic-cover-i69653.jpg",
-                    "price": "$3.99",
+                    "price": 3.99,
                     "series": "Batman",
                     "type": "comic book",
                     "tag": 'comic',
@@ -54,7 +54,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/5/50/Batman_Beyond_v.1_1.jpg",
-                    "price": "$2.99",
+                    "price": 12.57,
                     "series": "Batman Beyond",
                     "type": "comic book",
                     "tag": 'novel',
@@ -62,7 +62,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/0/0d/Batman_Superman_Vol_1_1.jpg",
-                    "price": "$3.99",
+                    "price": 6.25,
                     "series": "Batman/Superman",
                     "type": "comic book",
                     "tag": 'drama',
@@ -70,7 +70,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/c/cf/Batman_Superman_Annual_Vol_2_1.jpg",
-                    "price": "$4.99",
+                    "price": 13.37,
                     "series": "Batman/Superman Annual",
                     "type": "comic book",
                     "tag": 'novel',
@@ -78,7 +78,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/5/54/Batman_The_Joker_War_Zone_Vol_1_1.jpg",
-                    "price": "$5.99",
+                    "price": 5.99,
                     "series": "Batman: The Joker War Zone",
                     "type": "comic book",
                     "tag": 'comic',
@@ -86,7 +86,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/6/64/Batman_Three_Jokers_Collected.jpg",
-                    "price": "$6.99",
+                    "price": 6.99,
                     "series": "Batman: Three Jokers",
                     "type": "comic book",
                     "tag": 'drama',
@@ -94,7 +94,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/f/f8/Batman_White_Knight_Presents_Harley_Quinn_Vol_1_1.jpg",
-                    "price": "$4.99",
+                    "price": 4.99,
                     "series": "Batman: White Knight Presents: Harley Quinn",
                     "type": "comic book",
                     "tag": 'comic',
@@ -102,7 +102,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/c/c8/Catwoman_Vol_2_1.jpg",
-                    "price": "$16.99",
+                    "price": 16.99,
                     "series": "Catwoman",
                     "type": "graphic novel",
                     "tag": 'novel',
@@ -114,32 +114,60 @@ export default {
     },
     methods: {
         /* appheader main select filter function */
-        tagSelected(value , event) {
+        tagSelected(value, event) {
 
-            console.log('value: ', value , '$event: ', event);
+            console.log('value: ', value, '$event: ', event);
 
-           this.cardsArray.forEach(element => {
+            this.cardsArray.forEach(element => {
 
-                if(value === ''){
-                    if(element.visibility === false){
+                if (value === '') {
+                    if (element.visibility === false) {
                         element.visibility = true;
                     }
                 }
-                else if(element.tag.includes(value)) {
+                else if (element.tag.includes(value)) {
 
                     element.visibility = !element.visibility;
-                  
+
                 }
-                else{
-                    if(element.visibility === false) {
+                else {
+                    if (element.visibility === false) {
                         element.visibility = true;
                     }
                 }
-           });
+            });
 
-           //getting cards via query selector function
-           const cards = document.querySelectorAll('div[id^="div_injected"]');
-           console.log('cards in container: ', cards, 'are ', cards.length);
+            //getting cards via query selector function
+            const cards = document.querySelectorAll('div[id^="div_injected"]');
+            console.log('cards in container: ', cards, 'are ', cards.length);
+        },
+
+        priceSelected(value, event) {
+
+            /* console.log('value: ', value, '$event: ', event);
+ 
+             this.cardsArray.forEach(element => {
+ 
+                 if (value === '') {
+                     if (element.price === false) {
+                         element.price = true;
+                     }
+                 }
+                 else if (element.tag.includes(value)) {
+ 
+                     element.price = !element.price;
+ 
+                 }
+                 else {
+                     if (element.price === false) {
+                         element.price = true;
+                     }
+                 }
+             });
+ 
+             //getting cards via query selector function
+             const cards = document.querySelectorAll('div[id^="div_injected"]');
+             console.log('cards in container: ', cards, 'are ', cards.length);  */
         },
     }
 }
@@ -167,27 +195,28 @@ export default {
     <main class="d-flex flex-column justify-content-evenly align-items-center">
 
         <div id="container_cards" class="container d-flex justify-content-center align-items-center flex-wrap">
-            <appcards v-for="(card, index) in cardsArray" :visibility="card.visibility" :card="card" :index="index" ></appcards>
+            <appcards v-for="(card, index) in cardsArray" :visibility="card.visibility" :card="card" :index="index"
+                :price="card.price"></appcards>
         </div>
 
         <div id="div_wrapper" class="col-5 d-flex flex-row justify-content-center align-items-center my-3">
-            
-                <select name="filter" id="cards_filter" v-on:change="tagSelected($event.target.value , $event)">
-                    <option value="">All tags</option>
-                    <option value="comic">Comic</option>
-                    <option value="drama">Drama</option>
-                    <option value="novel">Novel</option>
-                </select>
-            
-            
-                <select name="filter" id="prices_filter" v-on:change="priceSelected($event.target.value , $event)">
-                    <option value="">All prices</option>
-                    <option value="comic">From 1&euro; to 5&euro;</option>
-                    <option value="drama">From 6&euro; to 10&euro;</option>
-                    <option value="novel">From 11&euro; to 15&euro;</option>
-                    <option value="novel">From 16&euro; to 20&euro;</option>
-                </select>
-           
+
+            <select name="filter" id="cards_filter" v-on:change="tagSelected($event.target.value, $event)">
+                <option value="">All tags</option>
+                <option value="comic">Comic</option>
+                <option value="drama">Drama</option>
+                <option value="novel">Novel</option>
+            </select>
+
+
+            <select name="filter" id="prices_filter" class="col-2" v-on:change="priceSelected($event.target.value, $event)">
+                <option value="">All prices</option>
+                <option value="comic">From 1&euro; to 5&euro;</option>
+                <option value="drama">From 6&euro; to 10&euro;</option>
+                <option value="novel">From 11&euro; to 15&euro;</option>
+                <option value="novel">From 16&euro; to 20&euro;</option>
+            </select>
+
         </div>
 
     </main>
@@ -293,27 +322,29 @@ main {
     }
 
     & #div_wrapper {
-        
+
         & #cards_filter {
             background-color: var(--blue-comics);
             padding: .2rem .45rem;
             border-radius: 10px;
-    
+
+            font-size: small;
             color: white;
             text-shadow: .5px .5px black;
-    
+
             & option {
                 background-color: rgb(71, 186, 214);
                 color: white;
                 text-align: center;
             }
-        
+
         }
-    
+
         & #prices_filter {
             background-color: var(--green-select);
             padding: .2rem .45rem;
             border-radius: 10px;
+            font-size: small;
 
             & option {
                 background-color: rgb(48, 211, 97);
