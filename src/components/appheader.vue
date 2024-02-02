@@ -107,9 +107,21 @@ export default {
             console.log('value: ', value , '$event: ', event);
             
             //applying containerCheck() function
-            const containerlenght =  this.containerCheck();
-            console.log('containerLenght: ', containerlenght);
+            const queryCards = this.containerCheck();
+            console.log('querycards: ', queryCards, 'querycards length: ', queryCards.length);
 
+            if(queryCards.length < this.cardsArray.length){
+                const cardsContainer = document.getElementById('container_cards');
+
+
+                queryCards.forEach(element => {
+                    element.classList.add('col-12');
+                })
+                // cardsContainer.innerHTML = '';
+            }
+
+
+       
            this.cardsArray.forEach((element, index) => {
 
                 if(element.tag.includes(value)) {
@@ -119,16 +131,10 @@ export default {
                 }
            });
         },
+
         containerCheck(){
-            const cardsContainer = document.getElementById('container_cards');
-
-            let index = 0;
-            for (let index = 0; index < cardsContainer.length; index++) {
-                console.log('containercards index: ', index);
-                
-            }
-
-            return index;
+            const cards = document.querySelectorAll('div[id^="div_injected"]');
+            return cards;
         },
 
     }
