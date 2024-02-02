@@ -170,7 +170,7 @@ export default {
             <appcards v-for="(card, index) in cardsArray" :visibility="card.visibility" :card="card" :index="index" ></appcards>
         </div>
 
-        <div class="div_wrapper col-5 d-flex flex-row justify-content-center align-items-center">
+        <div id="div_wrapper" class="col-5 d-flex flex-row justify-content-center align-items-center my-3">
             
                 <select name="filter" id="cards_filter" v-on:change="tagSelected($event.target.value , $event)">
                     <option value="">All tags</option>
@@ -288,21 +288,40 @@ main {
         }
     }
 
-    
     & select {
-        background-color: var(--blue-comics);
-        padding: .2rem .45rem;
-        border-radius: 10px;
+        margin: auto .2rem;
+    }
 
-        color: white;
-        text-shadow: .5px .5px black;
-
-        & option {
-            background-color: rgb(71, 186, 214);
+    & #div_wrapper {
+        
+        & #cards_filter {
+            background-color: var(--blue-comics);
+            padding: .2rem .45rem;
+            border-radius: 10px;
+    
             color: white;
-            text-align: center;
+            text-shadow: .5px .5px black;
+    
+            & option {
+                background-color: rgb(71, 186, 214);
+                color: white;
+                text-align: center;
+            }
+        
         }
     
+        & #prices_filter {
+            background-color: var(--green-select);
+            padding: .2rem .45rem;
+            border-radius: 10px;
+
+            & option {
+                background-color: rgb(48, 211, 97);
+                color: white;
+                text-align: center;
+            }
+        }
+
     }
 }
 
