@@ -178,16 +178,16 @@ export default {
         <div class="container d-flex justify-content-between align-items-center">
             <img class="logo" src="../assets/img/header&sub/sub_1/dc-logo.png" alt="dc-logo">
             <ul>
-                <a href="">characters</a>
-                <a href="" class="a_blue">comics</a>
-                <a href="">movies</a>
-                <a href="">tv</a>
-                <a href="">games</a>
-                <a href="">collectibles</a>
-                <a href="">videos</a>
-                <a href="">fans</a>
-                <a href="">news</a>
-                <a href="">shop</a>
+                <li href="">characters</li>
+                <li href="">comics</li>
+                <li href="">movies</li>
+                <li href="">tv</li>
+                <li href="">games</li>
+                <li href="">collectibles</li>
+                <li href="">videos</li>
+                <li href="">fans</li>
+                <li href="">news</li>
+                <li href="">shop</li>
             </ul>
         </div>
     </header>
@@ -241,8 +241,7 @@ export default {
                 <a>digital comics</a>
             </div>
             <div class="wrapper">
-                <img src="../assets/img/header&sub/sub_3/buy-dc-power-visa.svg" alt="buy-digital-comics"
-                    style="font-size: .5rem; color: blue;">
+                <img src="../assets/img/header&sub/sub_3/buy-dc-power-visa.svg" alt="buy-digital-comics">
                 <a>digital comics</a>
             </div>
         </div>
@@ -279,25 +278,20 @@ header {
             flex-direction: row;
             justify-content: space-evenly;
 
-            & a {
+            & li {
                 color: var(--main-dark);
-                text-decoration: none;
+                list-style-type: none;
                 text-transform: uppercase;
                 margin: auto .4rem;
                 font-size: .6rem;
                 font-weight: bolder;
             }
 
-            & a:hover {
+            & li:hover {
                 font-weight: 800;
-                color: black;
-                border-bottom: 0;
-            }
-
-            & .a_blue {
-                padding-top: 2px;
                 color: var(--blue-comics);
-                border-bottom: solid 2px var(--blue-comics);
+                border-bottom: solid 1.5px var(--blue-comics);
+                cursor: pointer;
             }
 
         }
@@ -320,6 +314,7 @@ main {
 
     & select {
         margin: auto .2rem;
+        filter: drop-shadow(0 0 1.5px rgb(179, 179, 179));
     }
 
     & #div_wrapper {
@@ -346,6 +341,8 @@ main {
             padding: .2rem .45rem;
             border-radius: 10px;
             font-size: small;
+            color: white;
+            text-shadow: .5px .5px black;
 
             & option {
                 background-color: rgb(48, 211, 97);
