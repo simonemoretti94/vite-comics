@@ -114,18 +114,11 @@ export default {
     },
     methods: {
         /* appheader main select filter function */
-        selectedOption(value , event) {
+        tagSelected(value , event) {
 
             console.log('value: ', value , '$event: ', event);
-            
-            //applying containerCheck() function
-            const queryCards = this.containerCheck();
-            
-            //console.log('querycards: ', queryCards, 'querycards length: ', queryCards.length);
 
-
-       
-           this.cardsArray.forEach((element, index) => {
+           this.cardsArray.forEach(element => {
 
                 if(value === ''){
                     if(element.visibility === false){
@@ -143,13 +136,11 @@ export default {
                     }
                 }
            });
-        },
 
-        containerCheck(){
-            const cards = document.querySelectorAll('div[id^="div_injected"]');
-            return cards;
+           //getting cards via query selector function
+           const cards = document.querySelectorAll('div[id^="div_injected"]');
+           console.log('cards in container: ', cards, 'are ', cards.length);
         },
-
     }
 }
 </script>
@@ -179,13 +170,24 @@ export default {
             <appcards v-for="(card, index) in cardsArray" :visibility="card.visibility" :card="card" :index="index" ></appcards>
         </div>
 
-        <div id="div_filter" class="container col-5 d-flex justify-content-center my-2" >
-            <select name="filter" id="cards_filter" v-on:change="selectedOption($event.target.value , $event)">
-                <option value="">Tutti i tag</option>
-                <option value="comic">Comic</option>
-                <option value="drama">Drama</option>
-                <option value="novel">Novel</option>
-            </select>
+        <div class="div_wrapper col-5 d-flex flex-row justify-content-center align-items-center">
+            
+                <select name="filter" id="cards_filter" v-on:change="tagSelected($event.target.value , $event)">
+                    <option value="">All tags</option>
+                    <option value="comic">Comic</option>
+                    <option value="drama">Drama</option>
+                    <option value="novel">Novel</option>
+                </select>
+            
+            
+                <select name="filter" id="prices_filter" v-on:change="priceSelected($event.target.value , $event)">
+                    <option value="">All prices</option>
+                    <option value="comic">From 1&euro; to 5&euro;</option>
+                    <option value="drama">From 6&euro; to 10&euro;</option>
+                    <option value="novel">From 11&euro; to 15&euro;</option>
+                    <option value="novel">From 16&euro; to 20&euro;</option>
+                </select>
+           
         </div>
 
     </main>
@@ -286,22 +288,21 @@ main {
         }
     }
 
-    & div#div_filter {
-        & select {
-            background-color: var(--blue-comics);
-            padding: .2rem .3rem;
-            border-radius: 10px;
+    
+    & select {
+        background-color: var(--blue-comics);
+        padding: .2rem .45rem;
+        border-radius: 10px;
 
+        color: white;
+        text-shadow: .5px .5px black;
+
+        & option {
+            background-color: rgb(71, 186, 214);
             color: white;
-            text-shadow: .5px .5px black;
-
-            & option {
-                background-color: rgb(71, 186, 214);
-                color: white;
-                text-align: center;
-                
-            }
+            text-align: center;
         }
+    
     }
 }
 
