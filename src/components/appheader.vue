@@ -14,7 +14,7 @@ export default {
             cardsArray: [
                 {
                     "thumb": "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
-                    "price": "$19.99",
+                    "price": 19.99,
                     "series": "Action Comics",
                     "type": "comic book",
                     "tag": 'comic',
@@ -22,7 +22,7 @@ export default {
                 },
                 {
                     "thumb": "https://www.panini.it/media/catalog/product/cache/a5b5dd3adfe0d321084804c738f29601/M/1/M1BLLA015ISBN_0.jpg",
-                    "price": "$3.99",
+                    "price": 3.99,
                     "series": "American Vampire 1976",
                     "type": "comic book",
                     "tag": 'drama',
@@ -30,7 +30,7 @@ export default {
                 },
                 {
                     "thumb": "https://media.wired.com/photos/593384dad80dd005b42b2817/master/w_2560%2Cc_limit/Aquaman-16.jpg",
-                    "price": "$16.99",
+                    "price": 14.99,
                     "series": "Aquaman",
                     "type": "graphic novel",
                     "tag": 'novel',
@@ -38,7 +38,7 @@ export default {
                 },
                 {
                     "thumb": "https://d29xot63vimef3.cloudfront.net/image/batgirl/1-1.jpg",
-                    "price": "$2.99",
+                    "price": 7.99,
                     "series": "Batgirl",
                     "type": "comic book",
                     "tag": 'drama',
@@ -46,7 +46,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.posters.cz/image/750/locandine-film-in-plexiglass-batman-prowl-comic-cover-i69653.jpg",
-                    "price": "$3.99",
+                    "price": 3.99,
                     "series": "Batman",
                     "type": "comic book",
                     "tag": 'comic',
@@ -54,7 +54,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/5/50/Batman_Beyond_v.1_1.jpg",
-                    "price": "$2.99",
+                    "price": 9.99,
                     "series": "Batman Beyond",
                     "type": "comic book",
                     "tag": 'novel',
@@ -62,7 +62,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/0/0d/Batman_Superman_Vol_1_1.jpg",
-                    "price": "$3.99",
+                    "price": 13.99,
                     "series": "Batman/Superman",
                     "type": "comic book",
                     "tag": 'drama',
@@ -70,7 +70,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/c/cf/Batman_Superman_Annual_Vol_2_1.jpg",
-                    "price": "$4.99",
+                    "price": 16.99,
                     "series": "Batman/Superman Annual",
                     "type": "comic book",
                     "tag": 'novel',
@@ -78,7 +78,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/5/54/Batman_The_Joker_War_Zone_Vol_1_1.jpg",
-                    "price": "$5.99",
+                    "price": 5.99,
                     "series": "Batman: The Joker War Zone",
                     "type": "comic book",
                     "tag": 'comic',
@@ -86,7 +86,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/6/64/Batman_Three_Jokers_Collected.jpg",
-                    "price": "$6.99",
+                    "price": 11.99,
                     "series": "Batman: Three Jokers",
                     "type": "comic book",
                     "tag": 'drama',
@@ -94,7 +94,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/f/f8/Batman_White_Knight_Presents_Harley_Quinn_Vol_1_1.jpg",
-                    "price": "$4.99",
+                    "price": 4.99,
                     "series": "Batman: White Knight Presents: Harley Quinn",
                     "type": "comic book",
                     "tag": 'comic',
@@ -102,7 +102,7 @@ export default {
                 },
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/c/c8/Catwoman_Vol_2_1.jpg",
-                    "price": "$16.99",
+                    "price": 16.99,
                     "series": "Catwoman",
                     "type": "graphic novel",
                     "tag": 'novel',
@@ -113,7 +113,7 @@ export default {
         }
     },
     methods: {
-        /* appheader main select filter function */
+        /* appheader main tag select filter function */
         tagSelected(value, event) {
 
             console.log('value: ', value, '$event: ', event);
@@ -141,6 +141,32 @@ export default {
             const cards = document.querySelectorAll('div[id^="div_injected"]');
             console.log('cards in container: ', cards, 'are ', cards.length);
         },
+
+        /* appheader main select price filter function */
+        priceSelected(value, event) {
+
+
+            value = Number(value);
+
+            console.log('value: ', value, 'typeof value: ', typeof (value));
+
+            this.cardsArray.forEach(element => {
+
+                if (value === 0) {
+                    if (element.visibility === false) {
+                        element.visibility = true;
+                        console.log('null value element log: ', element.visibility);
+                    }
+                }
+                else if (element.price < value && element.price >= (value - 4)) {
+                    element.visibility = true;
+                    console.log(element);
+                }
+                else {
+                    element.visibility = false;
+                }
+            });
+        }
     }
 }
 </script>
@@ -183,10 +209,10 @@ export default {
 
             <select name="filter" id="prices_filter" v-on:change="priceSelected($event.target.value, $event)">
                 <option value="">All prices</option>
-                <option value="comic">From 1&euro; to 5&euro;</option>
-                <option value="drama">From 6&euro; to 10&euro;</option>
-                <option value="novel">From 11&euro; to 15&euro;</option>
-                <option value="novel">From 16&euro; to 20&euro;</option>
+                <option value="5">1&euro; to 5&euro;</option>
+                <option value="10">6&euro; to 10&euro;</option>
+                <option value="15">11&euro; to 15&euro;</option>
+                <option value="20">16&euro; to 20&euro;</option>
             </select>
 
         </div>
