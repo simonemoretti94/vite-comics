@@ -110,13 +110,19 @@ export default {
                 }
             ],
 
+            /* tagSelected and priceSelected's servants */
+            tagVar: '',
+            priceVar: '',
         }
     },
     methods: {
         /* appheader main tag select filter function */
         tagSelected(value, event) {
 
-            console.log('value: ', value, '$event: ', event);
+            //console.log('value: ', value, '$event: ', event);
+
+            /* assigning value to external tagVar for future filterings */
+            this.tagVar = value;
 
             this.cardsArray.forEach(element => {
 
@@ -137,9 +143,6 @@ export default {
                 }
             });
 
-            //getting cards via query selector function
-            const cards = document.querySelectorAll('div[id^="div_injected"]');
-            console.log('cards in container: ', cards, 'are ', cards.length);
         },
 
         /* appheader main select price filter function */
@@ -148,19 +151,33 @@ export default {
 
             value = Number(value);
 
-            console.log('value: ', value, 'typeof value: ', typeof (value));
+            /* assigning value to external priceVar for future filterings */
+            this.priceVar = value;
 
             this.cardsArray.forEach(element => {
 
                 if (value === 0) {
                     if (element.visibility === false) {
                         element.visibility = true;
-                        console.log('null value element log: ', element.visibility);
                     }
                 }
                 else if (element.price < value && element.price >= (value - 4)) {
                     element.visibility = true;
-                    console.log(element);
+                }
+                else {
+                    element.visibility = false;
+                }
+            });
+        },
+
+        bothSelectTags() {
+            console.log('bothselect tags: ', this.tagVar, ' ', this.priceVar);
+            this.cardsArray.forEach(element => {
+                if (this.tagVar === '' || this.priceVar === 0) {
+                    console.log('A value is missing: 1) tagvar ', this.tagVar, '2) pricevar ', this.priceVar);
+                }
+                else if ((element.price < this.priceVar && element.price >= (this.priceVar - 4)) && element.tag === this.tagVar) {
+                    element.visibility = true;
                 }
                 else {
                     element.visibility = false;
@@ -215,7 +232,9 @@ export default {
                 <option value="20">16&euro; to 20&euro;</option>
             </select>
 
+            <button v-on:click="bothSelectTags()">filter both</button>
         </div>
+
 
     </main>
 
@@ -316,6 +335,7 @@ main {
     }
 
     & #div_wrapper {
+        position: relative;
 
         & #cards_filter {
             background-color: var(--blue-comics);
@@ -343,6 +363,30 @@ main {
                 color: white;
                 text-align: center;
             }
+        }
+
+        & button {
+            position: absolute;
+            top: 120%;
+            left: 42%;
+            padding: .2rem;
+            border: solid 1px lightblue;
+            background-color: var(--blue-comics);
+            border-radius: 10px;
+            text-transform: capitalize;
+            font-size: small;
+            font-weight: 500;
+            color: white;
+            text-shadow: -1px 1px black;
+
+
+            cursor: pointer;
+        }
+
+        & button:hover {
+            color: black;
+            background-color: red;
+            transform: scale(.8);
         }
 
     }
