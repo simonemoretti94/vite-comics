@@ -67,19 +67,11 @@ export default {
 
 
 <style scoped>
-/*#background {
-    position: absolute;
-    min-height: 250px;
-    width: 100%;
-    background-image: url('../assets/img/main&sub/jumbotron.jpg');
-    background-size: contain;
-    filter: grayscale(1) opacity(.3);
-}*/
-
 main {
-    background-image: url(../assets/img/main&sub/dc-logo-bg.png)  , url(../assets/img/footer&sub/footer-bg.jpg);
+    background-image: url(../assets/img/main&sub/dc-logo-bg.png), url(../assets/img/footer&sub/footer-bg.jpg);
     background-repeat: no-repeat, repeat;
-    background-position: right;
+    background-position: right 150px top -40px, center;
+    background-size: 350px, cover;
     position: relative;
     min-height: 250px;
 

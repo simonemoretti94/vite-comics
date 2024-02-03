@@ -229,10 +229,12 @@ header {
     z-index: 1;
     width: 100%;
     min-height: 80px;
-    background-color: var(--main-light);
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
+
+    background: linear-gradient(45deg, #000000, #cccccc, #ffffff);
+    border-bottom: solid .25px #cccccc;
 
     & .container {
         & .logo {
@@ -322,7 +324,7 @@ main {
 
 footer {
     min-height: 100px;
-    background-color: var(--blue-comics);
+    background: linear-gradient(var(--blue-comics), #0063c6, var(--blue-comics));
     font-family: 'Open Sans', sans-serif;
 
 
