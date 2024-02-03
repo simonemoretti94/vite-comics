@@ -114,32 +114,32 @@ export default {
     },
     methods: {
         /* appheader main select filter function */
-        tagSelected(value , event) {
+        tagSelected(value, event) {
 
-            console.log('value: ', value , '$event: ', event);
+            console.log('value: ', value, '$event: ', event);
 
-           this.cardsArray.forEach(element => {
+            this.cardsArray.forEach(element => {
 
-                if(value === ''){
-                    if(element.visibility === false){
+                if (value === '') {
+                    if (element.visibility === false) {
                         element.visibility = true;
                     }
                 }
-                else if(element.tag.includes(value)) {
+                else if (element.tag.includes(value)) {
 
                     element.visibility = !element.visibility;
-                  
+
                 }
-                else{
-                    if(element.visibility === false) {
+                else {
+                    if (element.visibility === false) {
                         element.visibility = true;
                     }
                 }
-           });
+            });
 
-           //getting cards via query selector function
-           const cards = document.querySelectorAll('div[id^="div_injected"]');
-           console.log('cards in container: ', cards, 'are ', cards.length);
+            //getting cards via query selector function
+            const cards = document.querySelectorAll('div[id^="div_injected"]');
+            console.log('cards in container: ', cards, 'are ', cards.length);
         },
     }
 }
@@ -150,16 +150,16 @@ export default {
         <div class="container d-flex justify-content-between align-items-center">
             <img class="logo" src="../assets/img/header&sub/sub_1/dc-logo.png" alt="dc-logo">
             <ul>
-                <a href="">characters</a>
-                <a href="" class="a_blue">comics</a>
-                <a href="">movies</a>
-                <a href="">tv</a>
-                <a href="">games</a>
-                <a href="">collectibles</a>
-                <a href="">videos</a>
-                <a href="">fans</a>
-                <a href="">news</a>
-                <a href="">shop</a>
+                <li href="">characters</li>
+                <li href="">comics</li>
+                <li href="">movies</li>
+                <li href="">tv</li>
+                <li href="">games</li>
+                <li href="">collectibles</li>
+                <li href="">videos</li>
+                <li href="">fans</li>
+                <li href="">news</li>
+                <li href="">shop</li>
             </ul>
         </div>
     </header>
@@ -167,27 +167,28 @@ export default {
     <main class="d-flex flex-column justify-content-evenly align-items-center">
 
         <div id="container_cards" class="container d-flex justify-content-center align-items-center flex-wrap">
-            <appcards v-for="(card, index) in cardsArray" :visibility="card.visibility" :card="card" :index="index" ></appcards>
+            <appcards v-for="(card, index) in cardsArray" :visibility="card.visibility" :card="card" :index="index">
+            </appcards>
         </div>
 
         <div id="div_wrapper" class="col-5 d-flex flex-row justify-content-center align-items-center my-3">
-            
-                <select name="filter" id="cards_filter" v-on:change="tagSelected($event.target.value , $event)">
-                    <option value="">All tags</option>
-                    <option value="comic">Comic</option>
-                    <option value="drama">Drama</option>
-                    <option value="novel">Novel</option>
-                </select>
-            
-            
-                <select name="filter" id="prices_filter" v-on:change="priceSelected($event.target.value , $event)">
-                    <option value="">All prices</option>
-                    <option value="comic">From 1&euro; to 5&euro;</option>
-                    <option value="drama">From 6&euro; to 10&euro;</option>
-                    <option value="novel">From 11&euro; to 15&euro;</option>
-                    <option value="novel">From 16&euro; to 20&euro;</option>
-                </select>
-           
+
+            <select name="filter" id="cards_filter" v-on:change="tagSelected($event.target.value, $event)">
+                <option value="">All tags</option>
+                <option value="comic">Comic</option>
+                <option value="drama">Drama</option>
+                <option value="novel">Novel</option>
+            </select>
+
+
+            <select name="filter" id="prices_filter" v-on:change="priceSelected($event.target.value, $event)">
+                <option value="">All prices</option>
+                <option value="comic">From 1&euro; to 5&euro;</option>
+                <option value="drama">From 6&euro; to 10&euro;</option>
+                <option value="novel">From 11&euro; to 15&euro;</option>
+                <option value="novel">From 16&euro; to 20&euro;</option>
+            </select>
+
         </div>
 
     </main>
@@ -249,27 +250,21 @@ header {
             flex-direction: row;
             justify-content: space-evenly;
 
-            & a {
+            & li {
                 color: var(--main-dark);
                 text-decoration: none;
                 text-transform: uppercase;
+                list-style: none;
                 margin: auto .4rem;
                 font-size: .6rem;
                 font-weight: bolder;
             }
 
-            & a:hover {
+            & li:hover {
                 font-weight: 800;
-                color: black;
-                border-bottom: 0;
-            }
-
-            & .a_blue {
-                padding-top: 2px;
                 color: var(--blue-comics);
                 border-bottom: solid 2px var(--blue-comics);
             }
-
         }
     }
 }
@@ -293,23 +288,23 @@ main {
     }
 
     & #div_wrapper {
-        
+
         & #cards_filter {
             background-color: var(--blue-comics);
             padding: .2rem .45rem;
             border-radius: 10px;
-    
+
             color: white;
             text-shadow: .5px .5px black;
-    
+
             & option {
                 background-color: rgb(71, 186, 214);
                 color: white;
                 text-align: center;
             }
-        
+
         }
-    
+
         & #prices_filter {
             background-color: var(--green-select);
             padding: .2rem .45rem;
