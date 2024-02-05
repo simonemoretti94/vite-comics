@@ -232,7 +232,7 @@ export default {
                 <option value="20">16&euro; to 20&euro;</option>
             </select>
 
-            <button v-on:click="bothSelectTags()">filter both</button>
+            <button v-on:click="bothSelectTags()">{{ tagVar }} + {{ priceVar }}</button>
         </div>
 
 
